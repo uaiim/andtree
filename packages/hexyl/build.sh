@@ -1,9 +1,0 @@
-TERMUX_PKG_HOMEPAGE=https://github.com/sharkdp/hexyl
-TERMUX_PKG_DESCRIPTION="A command-line hex viewer"
-TERMUX_PKG_LICENSE="Apache-2.0"
-TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="0.15.0"
-TERMUX_PKG_SRCURL=https://github.com/sharkdp/hexyl/archive/v$TERMUX_PKG_VERSION.tar.gz
-TERMUX_PKG_SHA256=017ab7fe18caa3d13427fb13fd6050a9d8bf9aa26d1e1fe02924dfd7f86cd3cf
-TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_BUILD_IN_SRC=true
