@@ -15,8 +15,8 @@ ext {
 android {
     compileSdkVersion project.properties.compileSdkVersion.toInteger()
     ndkVersion = System.getenv("JITPACK_NDK_VERSION") ?: project.properties.ndkVersion
-    def appVersionName = System.getenv("TERMUX_APP_VERSION_NAME") ?: ""
-    def apkVersionTag = System.getenv("TERMUX_APK_VERSION_TAG") ?: ""
+    def appVersionName = System.getenv("TERMUX_APP_VERSION_NAME") ?: "0.1"
+    def apkVersionTag = System.getenv("TERMUX_APK_VERSION_TAG") ?: "0.0.1"
     def splitAPKsForDebugBuilds = System.getenv("TERMUX_SPLIT_APKS_FOR_DEBUG_BUILDS") ?: "1"
     def splitAPKsForReleaseBuilds = System.getenv("TERMUX_SPLIT_APKS_FOR_RELEASE_BUILDS") ?: "1" // F-Droid does not support split APKs #1904
 
@@ -93,6 +93,9 @@ android {
 
         debug {
             signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true // Reproducible builds
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
