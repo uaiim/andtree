@@ -1,18 +1,18 @@
 name: "Bug report"
 description: "Create a report to help us improve"
 title: "[Bug]: "
-labels: ["bug report"]
+labels: [untriaged, "bug report"]
 body:
   - type: markdown
     attributes:
       value: |
-        This is a bug tracker of the Termux app. If you have issues with a package inside the app, then please open an issue at [termux-packages](https://github.com/termux/termux-packages) instead.
+        This is a bug tracker of the official Termux packages. Please do not report issues of third-party software there, but ask in [GitHub Discussions](https://github.com/termux/termux-packages/discussions) or [Community Social Media](https://wiki.termux.com/wiki/Community) instead. Use search to check whether your issue has been already reported and perhaps solved.
 
-        Use search before you open an issue to check whether your issue has been already reported and perhaps solved.
+        Android versions 5.x and 6.x are not supported anymore. Issues happening on these operating system versions will not be resolved.
 
-        Android versions 5.x and 6.x are not supported anymore.
+        Before submitting any repository service issues, check https://github.com/termux/termux-packages/issues/6726.
 
-        If you have issues installing packages then please see https://github.com/termux/termux-packages/issues/6726.
+        To submit a bug report, fill the form below. Provide as much as possible information about the encountered issue. We may request extended information such as `strace` logs if considered necessary. This will help package maintainers to understand the problem correctly and provide a solution. Make sure that your logs do not leak sensitive information (passwords, API keys, etc). Be patient, do not expect that issue could get resolved immediately.
   - type: textarea
     attributes:
       label: Problem description
@@ -24,9 +24,7 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Steps to reproduce the behavior.
-      description: |
-        Please post all necessary commands that are needed to reproduce the issue.
+      label: What steps will reproduce the bug?
     validations:
       required: true
   - type: textarea
@@ -35,10 +33,7 @@ body:
   - type: textarea
     attributes:
       label: System information
-      description: Please provide info about your device
-      value: |
-        * Termux application version:
-        * Android OS version:
-        * Device model:
+      description: Provide output of the command `termux-info`.
+      render: shell
     validations:
       required: true
