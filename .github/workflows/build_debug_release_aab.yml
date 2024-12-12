@@ -9,7 +9,7 @@ on:
       - doloplay
 
 jobs:
-  build:
+  build_apk:
     runs-on: ubuntu-latest
 
     steps:
