@@ -1,4 +1,4 @@
-name: Android Build Doloplay
+name: Android Build Doloplay Multiple App
 
 on:
   push:
