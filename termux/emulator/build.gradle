@@ -55,10 +55,6 @@ dependencies {
     testImplementation "junit:junit:4.13.2"
 }
 
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
-}
 
 afterEvaluate {
     publishing {
