@@ -1,4 +1,4 @@
-name: Android Build Doloplay Multiple App
+name: Android Build Main Multiple App
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
       - published
 
 jobs:
-  build_apk:
+  build:
     runs-on: ubuntu-latest
 
     steps:
