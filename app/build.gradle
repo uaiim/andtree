@@ -1,37 +1,33 @@
-buildscript {
-    apply from: '../versions.gradle'
-    
-    dependencies {
-        classpath "com.android.tools.build:gradle:$gradle_tools"
-    }
-}
 
 plugins {
     id 'com.android.application'
+    
 }
 
 android {
-    namespace 'id.andtree.doloplay'
-    compileSdk library_compile_sdk
+    namespace 'com.example.jdk17'
+    compileSdk 33
+    buildToolsVersion "33.0.1"
     
     defaultConfig {
-        applicationId "id.andtree.doloplay"
-        minSdk library_min_sdk
-        targetSdk library_target_sdk
+        applicationId "com.example.jdk17"
+        minSdk 21
+        targetSdk 33
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
-        buildToolsVersion = library_build_tools
         
         vectorDrawables { 
             useSupportLibrary true
+        }
+        
+        ndk {
+            debugSymbolLevel 'FULL'
         }
     }
 
     buildTypes {
         release {
             minifyEnabled true
-            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -45,17 +41,20 @@ android {
         viewBinding true
         
     }
+    
+   externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk')
+        }
+    }
+    ndkVersion = '24.0.8215888'
+    
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation("androidx.multidex:multidex:$multidex")
-    implementation("androidx.constraintlayout:constraintlayout:$constraintlayout")
-    implementation("com.google.android.material:material:$material")
-    implementation("androidx.appcompat:appcompat:$appcompat")
-    implementation("com.github.uaiim.downloader:req:$fetch")
-    implementation("com.github.uaiim.downloader:reqhttp:$fetch")
-    implementation("com.github.uaiim.downloader:reqrx:$fetch")
-    implementation("com.github.uaiim.downloader:reqfileserver:$fetch")
-    implementation("com.github.uaiim.downloader:reqmigrate:$fetch")
+
+
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
 }

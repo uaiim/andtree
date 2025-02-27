@@ -3,7 +3,6 @@ pluginManagement {
     gradlePluginPortal()
     google()
     mavenCentral()
-    maven { url 'https://jitpack.io' }
   }
 }
 
@@ -12,10 +11,9 @@ dependencyResolutionManagement {
   repositories {
     google()
     mavenCentral()
-    maven { url 'https://jitpack.io' }
   }
 }
 
-rootProject.name = "DoloPlay"
+rootProject.name = "jdk17"
 
-include(":app", ":termux:application", ":termux:emulator", ":termux:shared", ":termux:view")
+include(":app")
