@@ -1,0 +1,1 @@
+include ':androidnginxlib', ':android_rmtp_nginx-master', ':testjni', ':simple'
